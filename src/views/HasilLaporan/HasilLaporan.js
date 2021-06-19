@@ -12,9 +12,12 @@ import {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Logobmkg from '../../assets/gambar/logobmkg.png'
 import {Fire} from '../../config'
+import { useParams } from "react-router-dom";
 
-function HasilLaporan({route}) {
-  // const {id} = route.params;
+function HasilLaporan() {
+  
+  let {id} = useParams();
+  console.log('ini nilainya', id)
   const [nilai, setNilai] = React.useState({});
 
   const parseArray = listObject => {
@@ -31,7 +34,7 @@ function HasilLaporan({route}) {
   useEffect(() => {
     Fire.auth().onAuthStateChanged(user => {
       Fire.database()
-      .ref(`AWOS/FLW7qMefMnVDQevLmsPBz2GomFr1/2021-06-18`)
+      .ref(`AWOS/${id}`)
       .on('value', snapshot => {
         const dataRes = snapshot.val()
         console.log(dataRes)

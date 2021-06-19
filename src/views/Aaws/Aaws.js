@@ -11,12 +11,43 @@ import {
   } from '@coreui/react'
 import { useHistory } from 'react-router-dom';
 import TabLaporan from "../TabLaporan/TabLaporan";
+import {Fire} from '../../config'
 
 function Aaws() {
+
     const history = useHistory();
-    function handleClick() {
-      history.push("/HasilLaporan");
+    function handleClick(uid, date) {
+      history.push(`/HasilLaporan/${uid}/${date}`);
     }
+    const [nilai, setNilai] = React.useState([]);
+    const parseArray = listObject => {
+      const data = [];
+      Object.keys(listObject).map(key => {
+        data.push({
+          // id: key,
+          ...listObject[key],
+        });
+      });
+      return data;
+    };
+
+  React.useEffect(() => {
+    Fire.auth().onAuthStateChanged(user => {
+      Fire.database().ref(`AAWS`).on('value', snapshot => {
+        const semuaUser = parseArray(snapshot.val());
+        const newData = [];
+        semuaUser.forEach(data => {
+          Object.keys(data).forEach(key => {
+            newData.push({
+              id: key,
+              ...data[key],
+            })
+          });
+        })
+        setNilai(newData);
+      });
+    })
+  }, []);
 
   return (
     <div>

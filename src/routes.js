@@ -24,7 +24,7 @@ const routes = [
   { path: '/Ceilometer', name: 'Ceilometer', component: Ceilometer },
   { path: '/Seiscomp3', name: 'Seiscomp3', component: Seiscomp3 },
   { path: '/LoginPage', name: 'Login Page', component: LoginPage },
-  { path: '/HasilLaporan', name: 'Hasil Laporan', component: HasilLaporan },
+  { path: '/HasilLaporan/:id', name: 'Hasil Laporan', component: HasilLaporan },
 ];
 
 export default routes;
