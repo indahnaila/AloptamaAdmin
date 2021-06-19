@@ -13,12 +13,15 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import Logobmkg from '../../assets/gambar/logobmkg.png'
 import {Fire} from '../../config'
 import { useParams } from "react-router-dom";
+import moment from 'moment';
 
 function HasilLaporan() {
-  
-  let {id} = useParams();
+  // const tanggal = moment(nilai.waktu).format('ddd, YYYY/MM/DD, HH:mm');
+  let {id, date} = useParams();
   console.log('ini nilainya', id)
   const [nilai, setNilai] = React.useState({});
+
+  const [image, setImage] = useState();
 
   const parseArray = listObject => {
     const data = [];
@@ -34,7 +37,7 @@ function HasilLaporan() {
   useEffect(() => {
     Fire.auth().onAuthStateChanged(user => {
       Fire.database()
-      .ref(`AWOS/${id}`)
+      .ref(`AWOS/${id}/${date}`)
       .on('value', snapshot => {
         const dataRes = snapshot.val()
         console.log(dataRes)
@@ -116,10 +119,10 @@ function HasilLaporan() {
                     </CListGroupItem>
                     <CListGroupItem style={{width: 650}}>
                       <CImg
-                        // src={{uri:image}}
+                        src={{uri:image}}
                         style={{width: 120, height: 120}}
                         className="c-avatar-img"
-                        alt="logobmkg"
+                        alt="alat"
                       />
                     </CListGroupItem>
                 </CListGroup>
@@ -128,7 +131,7 @@ function HasilLaporan() {
                       <p>Petugas</p>
                       <p>:</p> 
                     </CListGroupItem>
-                    <CListGroupItem style={{width: 650}}>indah naila r.s</CListGroupItem>
+                    <CListGroupItem style={{width: 650}}>{nilai.petugas}</CListGroupItem>
                 </CListGroup>
               </CCardBody>
             </CCol>
