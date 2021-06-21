@@ -4,6 +4,7 @@ import moment from 'moment';
 import {Fire} from '../../config'
 import { useParams } from "react-router-dom";
 
+
 function TabLaporan({onClick, Email, catatan, waktu}) {
   // let {id, date} = useParams();
   const [nilai, setNilai] = React.useState({});
@@ -18,7 +19,7 @@ function TabLaporan({onClick, Email, catatan, waktu}) {
   //   });
   //   return data;
   // };
-  // const tanggal = moment(nilai.waktu).format('ddd, YYYY/MM/DD, HH:mm');
+  const tanggal = moment(nilai.waktu).format('ddd, YYYY/MM/DD, HH:mm');
   // useEffect(() => {
   //   Fire.auth().onAuthStateChanged(user => {
   //     Fire.database()
@@ -40,7 +41,7 @@ function TabLaporan({onClick, Email, catatan, waktu}) {
         onClick={onClick}>
             <p>{Email}</p>
             <p>{catatan}</p>
-            <p>{waktu}</p> 
+            <p>{tanggal}</p> 
         </CListGroupItem>
     </div>
   );

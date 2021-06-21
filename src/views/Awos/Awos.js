@@ -54,6 +54,7 @@ function Awos() {
               <CCardHeader style={{ fontWeight: "500", textAlign: 'center', fontSize: 16}}>
                 Hasil Laporan AWOS
               </CCardHeader>
+              <CCardBody></CCardBody>
                 {nilai.map(item => {
                   console.log(item)
                   return (

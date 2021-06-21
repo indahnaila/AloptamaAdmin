@@ -55,7 +55,17 @@ function Radar() {
                 Hasil Laporan Radar
               </CCardHeader>
               <CCardBody>
-                <TabLaporan/>
+              {nilai.map(item => {
+                  console.log(item)
+                  return (
+                    <TabLaporan 
+                    key={item.id}
+                    catatan={item.catatan}
+                    waktu={item.waktu}
+                    Email={item.Email}
+                    onClick={() => handleClick(item.uid, item.id)}/>
+                  )
+                })}
               </CCardBody>
             </CCol>
           </CRow>
