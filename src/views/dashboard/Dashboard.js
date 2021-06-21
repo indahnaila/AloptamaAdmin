@@ -9,7 +9,6 @@ import {
   CRow,
   
 } from '@coreui/react'
-import usersData from '../users/UsersData'
 import { Fire } from '../../config'
 
 const WidgetsDropdown = lazy(() => import('../widgets/WidgetsDropdown.js'))
@@ -28,7 +27,7 @@ const Dashboard = () => {
   const [dataAdmin, setDataAdmin] = useState();
 
   const fetchDatas = async () =>{
-    const datas = await Fire.database().ref('Admin').on('value', (snapshot) =>{
+    Fire.database().ref('Admin').on('value', (snapshot) =>{
       setDataAdmin(Object.values(snapshot.val()));
     });
   }
@@ -37,7 +36,7 @@ const Dashboard = () => {
     fetchDatas();
   }, [])
 
-  console.log(dataAdmin);
+  console.log('Data admin', dataAdmin);
 
   return (
     <div>

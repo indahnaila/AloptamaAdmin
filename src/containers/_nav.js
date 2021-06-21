@@ -26,19 +26,19 @@ const _nav =  [
   {
     _tag: 'CSidebarNavItem',
     name: 'AWS',
-    to: '/Aws',
+    to: '/AWS',
     icon: 'cil-chart-pie',
   },
   {
     _tag: 'CSidebarNavItem',
     name: 'AWOS',
-    to: '/Awos',
+    to: '/AWOS',
     icon: 'cil-chart-pie',
   },
   {
     _tag: 'CSidebarNavItem',
     name: 'AAWS',
-    to: '/Aaws',
+    to: '/AAWS',
     icon: 'cil-chart-pie',
   },
   {

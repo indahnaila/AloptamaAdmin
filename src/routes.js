@@ -11,19 +11,20 @@ const Ceilometer = React.lazy(() => import('./views/Ceilometer/Ceilometer'));
 const Seiscomp3 = React.lazy(() => import('./views/Seiscomp3/Seiscomp3'));
 const LoginPage = React.lazy(() => import('./views/LoginPage/LoginPage'));
 const HasilLaporan = React.lazy(() => import('./views/HasilLaporan/HasilLaporan'));
+const ToolReport = React.lazy(() => import('./views/ToolReport'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/users', exact: true,  name: 'Users', component: Users },
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
-  { path: '/Awos', name: 'AWOS', component: Awos },
-  { path: '/Aws', name: 'AWS', component: Aws },
-  { path: '/Aaws', name: 'AAWS', component: Aaws },
-  { path: '/Radar', name: 'Radar', component: Radar },
-  { path: '/Ceilometer', name: 'Ceilometer', component: Ceilometer },
-  { path: '/Seiscomp3', name: 'Seiscomp3', component: Seiscomp3 },
-  { path: '/LoginPage', name: 'Login Page', component: LoginPage },
+  { path: '/AWOS', name: 'AWOS', component: ToolReport },
+  { path: '/AWS', name: 'AWS', component: ToolReport },
+  { path: '/AAWS', name: 'AAWS', component: ToolReport },
+  { path: '/Radar', name: 'Radar', component: ToolReport },
+  { path: '/Ceilometer', name: 'Ceilometer', component: ToolReport },
+  { path: '/Seiscomp3', name: 'Seiscomp3', component: ToolReport },
+  { path: '/LoginPage', name: 'Login Page', component: ToolReport },
   { path: '/HasilLaporan/:id/:date', name: 'Hasil Laporan', component: HasilLaporan },
 ];
 

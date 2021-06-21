@@ -12,6 +12,7 @@ import {Fire} from '../../config'
 
 function Awos() {
     const history = useHistory();
+    console.log('history data', history);
     function handleClick(uid, date) {
       history.push(`/HasilLaporan/${uid}/${date}`);
     }
@@ -19,7 +20,7 @@ function Awos() {
     const parseArray = listObject => {
       const data = [];
       Object.keys(listObject).map(key => {
-        data.push({
+        return data.push({
           // id: key,
           ...listObject[key],
         });
@@ -27,7 +28,7 @@ function Awos() {
       return data;
     };
 
-  React.useEffect(() => {
+  useEffect(() => {
     Fire.auth().onAuthStateChanged(user => {
       Fire.database().ref(`AWOS`).on('value', snapshot => {
         const semuaUser = parseArray(snapshot.val());

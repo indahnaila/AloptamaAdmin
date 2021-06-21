@@ -40,7 +40,7 @@ function HasilLaporan() {
       .ref(`AWOS/${id}/${date}`)
       .on('value', snapshot => {
         const dataRes = snapshot.val()
-        console.log(dataRes)
+        console.log('asd', dataRes);
         setNilai(dataRes);
       });
     })
