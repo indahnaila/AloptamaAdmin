@@ -25,7 +25,9 @@ const routes = [
   { path: '/Ceilometer', name: 'Ceilometer', component: Ceilometer },
   { path: '/Seiscomp3', name: 'Seiscomp3', component: Seiscomp3 },
   { path: '/LoginPage', name: 'Login Page', component: LoginPage },
-  { path: '/HasilLaporan/:id/:date', name: 'Hasil Laporan', component: HasilLaporan },
+  
+  // Disini ditambah parameter :alat
+  { path: '/HasilLaporan/:alat/:id/:date', name: 'Hasil Laporan', component: HasilLaporan },
   // { path: '/TabLaporan/:id/:date', name: 'Tab Laporan', component: TabLaporan },
 ];
 

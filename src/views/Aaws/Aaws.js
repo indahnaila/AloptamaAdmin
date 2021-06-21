@@ -15,8 +15,11 @@ import {Fire} from '../../config'
 
 function Aaws() {
   const history = useHistory();
-    function handleClick(uid, date) {
-      history.push(`/HasilLaporan/${uid}/${date}`);
+
+  // disini alatnya diterima
+    function handleClick(alat, uid, date) {
+      // terus dikirim ke Hasil Laporan
+      history.push(`/HasilLaporan/${alat}/${uid}/${date}`);
     }
     const [nilai, setNilai] = React.useState([]);
     const parseArray = listObject => {
@@ -59,14 +62,14 @@ function Aaws() {
               </CCardHeader>
               <CCardBody>
                 {nilai.map(item => {
-                  console.log(item)
                    return (
                     <TabLaporan 
                       key={item.id}
                       catatan={item.catatan}
                       waktu={item.waktu}
                       Email={item.Email}
-                      onClick={() => handleClick(item.uid, item.id)}/>
+                      // di sini ditambah item.alat buat ngirim nama alatnya
+                      onClick={() => handleClick(item.alat, item.uid, item.id)}/>
                     )
                   })}
               </CCardBody>

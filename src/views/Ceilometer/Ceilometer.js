@@ -12,8 +12,10 @@ import {Fire} from '../../config'
 
 function Ceilometer() {
   const history = useHistory();
-    function handleClick(uid, date) {
-      history.push(`/HasilLaporan/${uid}/${date}`);
+  
+  // sama kaya AAWS
+    function handleClick(alat, uid, date) {
+      history.push(`/HasilLaporan/${alat}/${uid}/${date}`);
     }
     const [nilai, setNilai] = React.useState([]);
     const parseArray = listObject => {
@@ -64,7 +66,7 @@ function Ceilometer() {
                     catatan={item.catatan}
                     waktu={item.waktu}
                     Email={item.Email}
-                    onClick={() => handleClick(item.uid, item.id)}/>
+                    onClick={() => handleClick(item.alat, item.uid, item.id)}/>
                   )
                 })}
               </CCardBody>

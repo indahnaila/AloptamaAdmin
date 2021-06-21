@@ -1,36 +1,12 @@
-import React, {useEffect} from "react";
+import React from "react";
 import {CListGroupItem,} from '@coreui/react'
 import moment from 'moment';
-import {Fire} from '../../config'
-import { useParams } from "react-router-dom";
 
 
 function TabLaporan({onClick, Email, catatan, waktu}) {
-  // let {id, date} = useParams();
-  const [nilai, setNilai] = React.useState({});
-  // console.log('cek', nilai)
-  // const parseArray = listObject => {
-  //   const data = [];
-  //   Object.keys(listObject).map(key => {
-  //     data.push({
-  //       id: key,
-  //       data: listObject[key],
-  //     });
-  //   });
-  //   return data;
-  // };
-  const tanggal = moment(nilai.waktu).format('ddd, YYYY/MM/DD, HH:mm');
-  // useEffect(() => {
-  //   Fire.auth().onAuthStateChanged(user => {
-  //     Fire.database()
-  //     .ref(`AWOS/${id}/${date}`)
-  //     .on('value', snapshot => {
-  //       const dataRes = snapshot.val()
-  //       console.log(dataRes)
-  //       setNilai(dataRes);
-  //     });
-  //   })
-  // }, []);
+
+  // nilai.waktu dibah jadi waktu, karena propsnya waktu
+  const tanggal = moment(waktu).format('ddd, YYYY/MM/DD, HH:mm');
   
 
   return (

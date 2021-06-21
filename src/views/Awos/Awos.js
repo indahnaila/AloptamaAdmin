@@ -12,8 +12,10 @@ import {Fire} from '../../config'
 
 function Awos() {
     const history = useHistory();
-    function handleClick(uid, date) {
-      history.push(`/HasilLaporan/${uid}/${date}`);
+
+    // sama kaya di AAWS
+    function handleClick(alat, uid, date) {
+      history.push(`/HasilLaporan/${alat}/${uid}/${date}`);
     }
     const [nilai, setNilai] = React.useState([]);
     const parseArray = listObject => {
@@ -63,7 +65,7 @@ function Awos() {
                     catatan={item.catatan}
                     waktu={item.waktu}
                     Email={item.Email}
-                    onClick={() => handleClick(item.uid, item.id)}/>
+                    onClick={() => handleClick(item.alat, item.uid, item.id)}/>
                   )
                 })}
               <CCardBody>
