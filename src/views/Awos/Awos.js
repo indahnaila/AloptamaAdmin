@@ -6,8 +6,8 @@ import {
     CCol,
     CRow,
   } from '@coreui/react'
-import { useHistory } from 'react-router-dom';
 import TabLaporan from "../TabLaporan/TabLaporan";
+import { useHistory } from 'react-router-dom';
 import {Fire} from '../../config'
 
 function Awos() {

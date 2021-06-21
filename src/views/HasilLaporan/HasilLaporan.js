@@ -9,20 +9,16 @@ import {
     CListGroupItem,
     CImg,
   } from '@coreui/react'
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import Logobmkg from '../../assets/gambar/logobmkg.png'
 import {Fire} from '../../config'
 import { useParams } from "react-router-dom";
 import moment from 'moment';
 
 function HasilLaporan() {
-  // const tanggal = moment(nilai.waktu).format('ddd, YYYY/MM/DD, HH:mm');
+  
   let {id, date} = useParams();
-  console.log('ini nilainya', id)
   const [nilai, setNilai] = React.useState({});
-
   const [image, setImage] = useState();
-
   const parseArray = listObject => {
     const data = [];
     Object.keys(listObject).map(key => {
@@ -33,6 +29,7 @@ function HasilLaporan() {
     });
     return data;
   };
+  const waktu = moment(nilai.waktu).format('ddd, YYYY/MM/DD, HH:mm');
 
   useEffect(() => {
     Fire.auth().onAuthStateChanged(user => {
@@ -75,7 +72,7 @@ function HasilLaporan() {
                       <p>Waktu</p>
                       <p>:</p> 
                     </CListGroupItem>
-                    <CListGroupItem style={{width: 650}}>{nilai.waktu}</CListGroupItem>
+                    <CListGroupItem style={{width: 650}}>{waktu}</CListGroupItem>
                 </CListGroup>
                 <CListGroup style={{flexDirection: 'row'}}>
                     <CListGroupItem style={{width: 300, flexDirection: 'row', display: 'flex', justifyContent: 'space-between', height: 50}}>

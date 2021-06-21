@@ -11,6 +11,7 @@ const Ceilometer = React.lazy(() => import('./views/Ceilometer/Ceilometer'));
 const Seiscomp3 = React.lazy(() => import('./views/Seiscomp3/Seiscomp3'));
 const LoginPage = React.lazy(() => import('./views/LoginPage/LoginPage'));
 const HasilLaporan = React.lazy(() => import('./views/HasilLaporan/HasilLaporan'));
+// const TabLaporan = React.lazy(() => import('./views/TabLaporan/TabLaporan'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -25,6 +26,7 @@ const routes = [
   { path: '/Seiscomp3', name: 'Seiscomp3', component: Seiscomp3 },
   { path: '/LoginPage', name: 'Login Page', component: LoginPage },
   { path: '/HasilLaporan/:id/:date', name: 'Hasil Laporan', component: HasilLaporan },
+  // { path: '/TabLaporan/:id/:date', name: 'Tab Laporan', component: TabLaporan },
 ];
 
 export default routes;

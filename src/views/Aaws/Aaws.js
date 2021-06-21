@@ -14,8 +14,7 @@ import TabLaporan from "../TabLaporan/TabLaporan";
 import {Fire} from '../../config'
 
 function Aaws() {
-
-    const history = useHistory();
+  const history = useHistory();
     function handleClick(uid, date) {
       history.push(`/HasilLaporan/${uid}/${date}`);
     }
