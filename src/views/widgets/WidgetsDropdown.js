@@ -19,7 +19,7 @@ const WidgetsDropdown = () => {
       <CCol sm="6" lg="2">
         <CWidgetDropdown
           color="gradient-primary"
-          header="9.823"
+          header="22"
           text="AWS"
           footerSlot={
             <ChartLineSimple
@@ -39,7 +39,7 @@ const WidgetsDropdown = () => {
       <CCol sm="6" lg="2">
         <CWidgetDropdown
           color="gradient-info"
-          header="9.823"
+          header="18"
           text="AWOS"
           footerSlot={
             <ChartBarSimple
@@ -57,7 +57,7 @@ const WidgetsDropdown = () => {
       <CCol sm="6" lg="2">
         <CWidgetDropdown
           color="gradient-warning"
-          header="9.823"
+          header="15"
           text="AAWS"
           footerSlot={
             <ChartLineSimple
@@ -78,7 +78,7 @@ const WidgetsDropdown = () => {
       <CCol sm="6" lg="2">
         <CWidgetDropdown
           color="gradient-danger"
-          header="9.823"
+          header="10"
           text="Ceilometer"
           footerSlot={
             <ChartLineSimple
@@ -100,7 +100,7 @@ const WidgetsDropdown = () => {
       <CCol sm="6" lg="2">
         <CWidgetDropdown
           color="gradient-success"
-          header="9.823"
+          header="11"
           text="Radar"
           footerSlot={
             <ChartLineSimple
@@ -121,7 +121,7 @@ const WidgetsDropdown = () => {
       <CCol sm="6" lg="2">
         <CWidgetDropdown
           color="gradient-warning"
-          header="9.823"
+          header="12"
           text="Seiscomp3"
           footerSlot={
             <ChartBarSimple
