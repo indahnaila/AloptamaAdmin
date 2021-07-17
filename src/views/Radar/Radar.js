@@ -57,7 +57,9 @@ function Radar() {
                 Hasil Laporan Radar
               </CCardHeader>
               <CCardBody>
-              {nilai.map(item => {
+              {nilai
+              .sort((a,b) => b.waktu - a.waktu)
+              .map(item => {
                   console.log(item)
                   return (
                     <TabLaporan 

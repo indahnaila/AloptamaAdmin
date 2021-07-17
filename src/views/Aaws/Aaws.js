@@ -61,11 +61,14 @@ function Aaws() {
                 Hasil Laporan AAWS
               </CCardHeader>
               <CCardBody>
-                {nilai.map(item => {
+                {nilai
+                .sort((a,b) => b.waktu - a.waktu)
+                .map(item => {
                    return (
                     <TabLaporan 
                       key={item.id}
                       catatan={item.catatan}
+                      kondisi={item.kondisi}
                       waktu={item.waktu}
                       Email={item.Email}
                       // di sini ditambah item.alat buat ngirim nama alatnya

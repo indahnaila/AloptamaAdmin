@@ -27,8 +27,6 @@ const LoginPage = () => {
   });
 
   const onContinue = () => {
-
-  //   // (ini fungsi login mulai)
     Fire.auth()
       .signInWithEmailAndPassword(form.username, form.password)
       .then(res => {
@@ -40,7 +38,7 @@ const LoginPage = () => {
             console.log('data user:', resDB.val());
             if (resDB.val()) {
               storeData('user', resDB.val());
-              history.replace('/Dachboard');
+              history.replace('/dashboard');
             }
           });
       })
@@ -54,28 +52,7 @@ const LoginPage = () => {
         // });
       });
   };
-  // (ini fungsi login akhir)
 
-  //  (ini bagian registrasi dimulai)
-  //   Fire.auth()
-  //     .createUserWithEmailAndPassword(form.username, form.password)
-  //     .then(success => {
-  //       setForm('reset');
-  //       const data = {
-  //         username: form.username,
-  //       };
-  //       Fire.database()
-  //         .ref('users/' + success.user.uid + '/')
-  //         .set(data);
-
-  //       storeData('user', data);
-  //       history.replace('/Dashboard', data);
-  //     })
-  //     .catch(error => {
-  //       const errorMessage = error.message;
-  //     });
-  // };
-  // (bagian registrasi berakhir)
   return (
     <div className="c-app c-default-layout flex-row align-items-center">
       <CContainer>

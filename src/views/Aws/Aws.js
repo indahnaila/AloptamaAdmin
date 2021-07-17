@@ -56,7 +56,9 @@ function Aws() {
                 Hasil Laporan AWS
               </CCardHeader>
               <CCardBody>
-              {nilai.map(item => {
+              {nilai
+              .sort((a,b) => b.waktu - a.waktu)
+              .map(item => {
                   console.log(item)
                   return (
                     <TabLaporan 

@@ -44,12 +44,12 @@ const _nav =  [
     to: '/Seiscomp3',
     icon: 'cil-chart-pie',
   },
-  {
-    _tag: 'CSidebarNavItem',
-    name: 'Log Out',
-    to: '/LoginPage',
-    icon: 'cil-chevron-left',
-  },   
+  // {
+  //   _tag: 'CSidebarNavItem',
+  //   name: 'Log Out',
+  //   to: '/LoginPage',
+  //   icon: 'cil-chevron-left',
+  // },
 ]
 
 export default _nav

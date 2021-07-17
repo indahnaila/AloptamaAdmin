@@ -57,7 +57,9 @@ function Awos() {
                 Hasil Laporan AWOS
               </CCardHeader>
               <CCardBody></CCardBody>
-                {nilai.map(item => {
+                {nilai
+                .sort((a,b) => b.waktu - a.waktu)
+                .map(item => {
                   console.log(item)
                   return (
                     <TabLaporan 
